@@ -1,0 +1,5 @@
+E:/C++Projects/NetworkLib/CMakeFiles/ALL_BUILD.dir
+E:/C++Projects/NetworkLib/CMakeFiles/ZERO_CHECK.dir
+E:/C++Projects/NetworkLib/src/Client/CMakeFiles/Client.dir
+E:/C++Projects/NetworkLib/src/Spooder/CMakeFiles/Spooder.dir
+E:/C++Projects/NetworkLib/src/Server/CMakeFiles/Server.dir
