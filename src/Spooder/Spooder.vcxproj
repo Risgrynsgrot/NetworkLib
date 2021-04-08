@@ -271,12 +271,22 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\spooder.cpp" />
     <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\CommonNetworkIncludes.h" />
-    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Packet.h" />
-    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Packet.cpp" />
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\BitSerializer.h" />
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\BitSerializer.cpp" />
     <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Serializer.cpp" />
     <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Serializer.h" />
     <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\PacketTypes.h" />
     <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\MathFunctions.h" />
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\MessageFactory.cpp" />
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\MessageFactory.h" />
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Address.cpp" />
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Address.h" />
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Socket.cpp" />
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Socket.h" />
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\NetworkFunctions.cpp" />
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\NetworkFunctions.h" />
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Timer.cpp" />
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\C++Projects\NetworkLib\ZERO_CHECK.vcxproj">

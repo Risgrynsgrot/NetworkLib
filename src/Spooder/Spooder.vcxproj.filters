@@ -4,10 +4,25 @@
     <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\spooder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Packet.cpp">
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\BitSerializer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Serializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\MessageFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Address.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Socket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\NetworkFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\C++Projects\NetworkLib\src\Spooder\Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -15,7 +30,7 @@
     <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\CommonNetworkIncludes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Packet.h">
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\BitSerializer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Serializer.h">
@@ -25,6 +40,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\MathFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\MessageFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Address.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\NetworkFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\C++Projects\NetworkLib\src\Spooder\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

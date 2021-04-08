@@ -3,12 +3,22 @@ set(target_name Spooder)
 set(src_network
     "spooder.cpp"
     "CommonNetworkIncludes.h"
-    "Packet.h"
-    "Packet.cpp"
+    "BitSerializer.h"
+    "BitSerializer.cpp"
     "Serializer.cpp"
     "Serializer.h"
     "PacketTypes.h"
     "MathFunctions.h"
+    "MessageFactory.cpp"
+    "MessageFactory.h"
+    "Address.cpp"
+    "Address.h"
+    "Socket.cpp"
+    "Socket.h"
+    "NetworkFunctions.cpp"
+    "NetworkFunctions.h"
+    "Timer.cpp"
+    "Timer.h"
     )
 
 add_library(${target_name} ${src_network})

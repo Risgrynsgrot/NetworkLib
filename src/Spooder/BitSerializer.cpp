@@ -1,4 +1,4 @@
-#include "Packet.h"
+#include "BitSerializer.h"
 #include <assert.h>
 #include <intrin.h>
 
@@ -71,25 +71,34 @@ Spooder::BitWriter::BitWriter()
 	myScratch = 0;
 	myScratchBits = 0;
 	myWordIndex = 0;
+	myBitsWritten = 0;
+	myNumBits = 0;
+	myNumWords = 0;
+	myNumBytes = 0;
 	myBuffer = nullptr;
 }
 
 bool Spooder::BitReader::WouldReadPastEnd(int aBits)
 {
-	return myNumBitsRead + aBits < myTotalBits;
+	return myNumBitsRead + aBits > myTotalBits;
 }
 
-Spooder::BitWriter::BitWriter(uint32_t* aBuffer)
+Spooder::BitWriter::BitWriter(void* aBuffer, int aBytesToWrite)
 {
-	myBuffer = aBuffer;
+	myBuffer = (uint32_t*)aBuffer;
 	myScratch = 0;
 	myScratchBits = 0;
 	myWordIndex = 0;
+	myBitsWritten = 0;
+	myNumBytes = aBytesToWrite;
+	myNumWords = aBytesToWrite / 4;
+	myNumBits = myNumWords * 32;
 }
 
 void Spooder::BitWriter::WriteBits(void* aData, int aBitsToWrite)
 {
-	myScratch |= (*(uint32_t*)aData) << myScratchBits; //Write data to scratch, scratchbits is how much data has been written to that scratch
+	assert(aBitsToWrite > 0);
+	myScratch |= (*(uint64_t*)aData) << myScratchBits; //Write data to scratch, scratchbits is how much data has been written to that scratch
 	myScratchBits += aBitsToWrite; //Add how much we just wrote, so we can write from that point
 	if (myScratchBits >= 32) //If the scratch has gone into its overflow buffer
 	{
@@ -98,6 +107,7 @@ void Spooder::BitWriter::WriteBits(void* aData, int aBitsToWrite)
 		myScratch >>= 32; //bitshift so we can start at the overflowbuffer
 		myScratchBits -= 32; //and move where we are in the scratch accordingly
 	}
+	myBitsWritten += aBitsToWrite;
 }
 void Spooder::BitWriter::Flush()
 {
@@ -107,6 +117,16 @@ void Spooder::BitWriter::Flush()
 Spooder::BitWriter::~BitWriter()
 {
 
+}
+
+int Spooder::BitWriter::GetBitsWritten()
+{
+	return myBitsWritten;
+}
+
+int Spooder::BitWriter::GetBytesWritten()
+{
+	return myBitsWritten / 8;
 }
 
 Spooder::BitReader::BitReader()
@@ -119,14 +139,14 @@ Spooder::BitReader::BitReader()
 	myWordIndex = 0;
 	myBuffer = 0;
 }
-Spooder::BitReader::BitReader(uint32_t * aBuffer, int aBytes)
+Spooder::BitReader::BitReader(const void* aBuffer, int aBytes)
 {
 	myScratch = 0;
 	myScratchBits = 0;
 	myTotalBits = aBytes * 8;
 	myNumBitsRead = 0;
 	myWordIndex = 0;
-	myBuffer = aBuffer;
+	myBuffer = (uint32_t*)aBuffer;
 }
 void Spooder::BitReader::ReadBits(void* aDest, int aBitsToRead)
 {

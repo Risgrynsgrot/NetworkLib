@@ -52,22 +52,28 @@ namespace Spooder
 	{
 	public:
 		BitWriter();
-		BitWriter(uint32_t* aBuffer);
+		BitWriter(void* aBuffer, int aBytes);
 		void WriteBits(void* aData, int aBitsToWrite);
 		void Flush();
 		~BitWriter();
+		int GetBytesWritten();
+		int GetBitsWritten();
 	private:
 		uint64_t myScratch;
 		int myScratchBits;
 		int myWordIndex;
 		uint32_t* myBuffer;
+		int myBitsWritten;
+		int myNumBits;
+		int myNumWords;
+		int myNumBytes;
 	};
 
 	class BitReader
 	{
 	public:
 		BitReader();
-		BitReader(uint32_t* aBuffer, int aBytes);
+		BitReader(const void* aBuffer, int aBytes);
 		void ReadBits(void* aData, int aBitsToRead);
 		void Flush();
 		bool WouldReadPastEnd(int aBits);
